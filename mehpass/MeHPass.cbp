@@ -31,6 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="bin/Release/noun.txt" />
+		<Unit filename="bin/Release/verb.txt" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
