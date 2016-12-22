@@ -116,6 +116,33 @@ string Convert(string input)    {
         result+="The "+getAdjective(gfc(input.substr(0,1)))+" "+getNoun(gfc(input.substr(1,1)))+".";
     } else if(input.length()==3)   {
         result+="The "+getAdjective(gfc(input.substr(0,1)))+" "+getNoun(gfc(input.substr(1,1)))+" will "+getVerb(gfc(input.substr(2,1)))+".";
+    } else if(input.length()==4)   {
+        result+="Many "+getAdjective(gfc(input.substr(0,1)))+" "+getNoun(gfc(input.substr(1,1)))+"s and "+getNoun(gfc(input.substr(2,1)))+"s like to "+getVerb(gfc(input.substr(3,1)))+".";
+    } else if(input.length()==5)   {
+        result+="Will the "+getAdjective(gfc(input.substr(0,1)))+" "+getNoun(gfc(input.substr(1,1)))+" "+getVerb(gfc(input.substr(2,1)))+" near the "+getAdjective(gfc(input.substr(3,1)))+" "+getNoun(gfc(input.substr(4,1)))+"?";
+    } else  {
+        int mode=0;
+        for(string::size_type i=0;i<input.length();i++)    {
+            if(mode==0)   {
+                result+="The";
+                mode++;
+            }
+            if(mode==1)   {
+                result+=" "+getAdjective(gfc(input.substr(i,1)));
+                mode++;
+            } else if(mode==2)  {
+                result+=" "+getNoun(gfc(input.substr(i,1)));
+                mode++;
+            } else if(mode==3)  {
+                result+=" "+getVerb(gfc(input.substr(i,1)))+"s";
+                mode++;
+            }
+            if(mode==4)   {
+                result+=", and the";
+                mode=1;
+            }
+        }
+        result+=".";
     }
     return result;
 }

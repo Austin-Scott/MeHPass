@@ -31,8 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="bin/Release/adjectives.txt" />
 		<Unit filename="bin/Release/noun.txt" />
-		<Unit filename="bin/Release/verb.txt" />
+		<Unit filename="bin/Release/verbs.txt" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
